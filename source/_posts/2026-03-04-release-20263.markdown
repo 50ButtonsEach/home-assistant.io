@@ -1,0 +1,33 @@
+## Send your vacuum to clean specific areas
+
+Got a robot vacuum? You can now tell it exactly which areas to clean! This release introduces the `vacuum.clean_area` action, which lets you send your vacuum to clean one or more specific areas on demand, right from Home Assistant.
+
+The best part? The action uses your existing Home Assistant areas — not some obscure vendor-specific identifiers. You simply map the segments your vacuum knows about to the areas you've already set up in Home Assistant, and you're good to go.
+
+### Getting started
+
+When your vacuum supports area cleaning but doesn't have a mapping configured yet, a repair issue will automatically show up in {% my repairs title="**Settings** > **System** > **Repairs**" %}. Select it, and you'll be taken straight to the mapping dialog where you can match the segments your vacuum has detected to your Home Assistant areas.
+
+<img src='/images/blog/2026-03/vacuum-area-mapping.png' alt='Screenshot of the vacuum area mapping dialog, allowing you to map vacuum segments to Home Assistant areas.' class='no-shadow' />
+
+You can also reach this mapping at any time through the vacuum's entity settings. Open the vacuum entity, select the settings icon, and look for the **Map vacuum segments to areas** section.
+
+### Staying in sync
+
+If your vacuum's internal segment layout ever changes — for example, after remapping in the manufacturer's app or the vacuum rediscovering its environment — Home Assistant will notice. A repair issue will alert you that the segments have changed, so you can update your mapping and make sure everything stays in sync.
+
+### Paving the way for voice
+
+Because the mapping uses native Home Assistant areas, this feature lays the groundwork for future voice assistant support. Imagine simply saying "clean the kitchen" and having your vacuum head to the right area. That's not available just yet, but the foundation is now in place to make it happen.
+
+### Supported integrations
+
+The `vacuum.clean_area` action is available for the following integrations in this release:
+
+- [Matter]
+- [Ecovacs]
+- [Roborock]
+
+[Ecovacs]: /integrations/ecovacs
+[Matter]: /integrations/matter
+[Roborock]: /integrations/roborock
